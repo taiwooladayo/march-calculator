@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="mymonth" type="text">
+
+    <button onclick="checkdays()">days</button>
+    <p id="display"></p>
+</body>
+</html>
+<script>
+
+function checkdays() {
+     let month = mymonth.value.trim().toLowerCase()
+     console.log(month);
+
+     if (month === "january" || month === "march" || month === "may" || month === "july" || month === "august" || month === "october" || month === "december" ) {
+         display.innerHTML = `${month} has 31 days`;
+         
+     }else if (month === "june" || month === "april" || month === "movember" || month === "september"  ) {
+      display.innerHTML =  `${month} has 30 days`;
+         
+     }else if (month === "february") {
+        display.innerHTML =`${month} has 28 days`;
+     }else{display.innerHTML =`${month} is not valid`;
+     }
+     
+}
+
+
+
+
+</script>
