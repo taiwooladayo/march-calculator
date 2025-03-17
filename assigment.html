@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rectangle Perimeter Calculator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+       
+        body {
+            background-color: #f5f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+       
+        .calculator-container {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            overflow: hidden;
+        }
+       
+        .calculator-header {
+            background-color: #4a6cfa;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+       
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+       
+        .calculator-body {
+            padding: 30px;
+        }
+       
+        .input-group {
+            margin-bottom: 20px;
+        }
+       
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+        }
+       
+        input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e1e5ee;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+       
+        input:focus {
+            outline: none;
+            border-color: #4a6cfa;
+        }
+       
+        button {
+            background-color: #4a6cfa;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 14px 24px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+       
+        button:hover {
+            background-color: #3a5bf9;
+        }
+       
+        .result {
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #f0f4ff;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 18px;
+            color: #333;
+            font-weight: 500;
+        }
+       
+        .rectangle-visual {
+            margin: 30px auto 0;
+            width: 200px;
+            height: 120px;
+            border: 3px solid #4a6cfa;
+            position: relative;
+        }
+       
+        .length-label, .breadth-label {
+            position: absolute;
+            color: #4a6cfa;
+            font-weight: 600;
+        }
+       
+        .length-label {
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+       
+        .breadth-label {
+            right: -25px;
+            top: 50%;
+            transform: translateY(-50%) rotate(90deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator-container">
+        <div class="calculator-header">
+            <h1>Rectangle Perimeter Calculator</h1>
+            <p>Calculate the perimeter of a rectangle by entering its dimensions</p>
+        </div>
+       
+        <div class="calculator-body">
+            <div class="input-group">
+                <label for="length">Length:</label>
+                <input type="number" id="length" placeholder="Enter length" min="1">
+            </div>
+           
+            <div class="input-group">
+                <label for="breadth">Breadth:</label>
+                <input type="number" id="breadth" placeholder="Enter breadth" min="1">
+            </div>
+           
+            <button onclick="calculatePerimeter()">Calculate Perimeter</button>
+           
+            <div class="result" id="displayResult">Perimeter will be displayed here</div>
+
+        </div>
+    </div>
+
+    <script>
+        let length = document.getElementById("length")
+        let breadth = document.getElementById("breadth")
+        let displayResult = document.getElementById("displayResult")
+        function calculatePerimeter() {
+            let perimeterAdd = (parseInt(length.value) + parseInt(breadth.value))
+            let perimeter = 2 * (perimeterAdd)
+            displayResult.innerHTML = `Perimeter of Rectangle is ${perimeter}`
+        }
+    </script>
+</body>
+</html>
