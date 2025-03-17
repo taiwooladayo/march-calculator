@@ -157,9 +157,21 @@
         let breadth = document.getElementById("breadth")
         let displayResult = document.getElementById("displayResult")
         function calculatePerimeter() {
-            let perimeterAdd = (parseInt(length.value) + parseInt(breadth.value))
+            
+
+            if (length.value.trim() === '') {
+              displayResult.innerHTML ="length can not be empty"
+              
+            }else if(breadth.value.trim() === ''){
+              displayResult.innerHTML ="breadth can not be empty"
+
+            }
+            
+            else {
+              let perimeterAdd = (parseInt(length.value) + parseInt(breadth.value))
             let perimeter = 2 * (perimeterAdd)
             displayResult.innerHTML = `Perimeter of Rectangle is ${perimeter}`
+            }
         }
     </script>
 </body>
