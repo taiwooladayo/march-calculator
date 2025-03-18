@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="body mass.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>BMI Calculator</h1>
+        <div class="form-container">
+            <label for="height">Height (m):</label>
+            <input type="number" id="height" placeholder="Enter height in meters">
+
+            <label for="weight">Weight (kg):</label>
+            <input type="number" id="weight" placeholder="Enter weight in kilograms">
+
+            <button onclick="calculateBMI()">Calculate BMI</button>
+
+            <div id="status"></div>
+        </div>
+    </div>
+
+</body>
+</html>
+<script>
+let height = document.getElementById('height')
+let weight = document.getElementById('weight')
+let status = document.getElementById('status')
+
+function calculateBMI() {
+let BMI = height.value/(weight.value *weight.value)
+
+if (height.value === '') {
+  status.innerHTML= `Height cannot be empty`  
+
+} else if (weight.value === '') {
+  status.innerHTML= `Weight cannot be empty`  
+    
+} else if (BMI < 18.5) {
+  status.innerHTML= `your BMI is ${BMI}, you are underweight`  
+} else if (BMI > 18.5 && BMI < 24.9) {
+  status.innerHTML= `your BMI is ${BMI}, your weight is normal`   
+} else if (BMI > 24.9 && BMI < 29.9) {
+  status.innerHTML= `your BMI is ${BMI}, you are overweight`   
+    
+} else{
+  status.innerHTML= `your BMI is ${BMI}, you are obese!`   
+
+}
+ 
+}
+
+
+</script>
+
